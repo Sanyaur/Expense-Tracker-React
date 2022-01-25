@@ -18,6 +18,7 @@ const ExpenseForm = () => {
           <input type='text' min='2019-01-01' max='2030-12-31' />
         </div>
       </div>
+      <button type='submit'>Add Expense</button>
     </form>
   );
 };

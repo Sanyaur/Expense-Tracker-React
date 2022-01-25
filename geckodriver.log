@@ -1,0 +1,8 @@
+1643122598986	geckodriver	INFO	Listening on 127.0.0.1:56999
+1643122599515	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ujvaris\\AppData\\Local\\Temp\\rust_mozprofilevZxzrx"
+1643122599869	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ujvaris\\AppData\\Local\\Temp\\rust_mozprofilevZxzrx\\search.json.mozlz4", (void 0)))
+1643122602206	Marionette	INFO	Listening on port 57004
+1643122602616	Marionette	INFO	Stopped listening on port 57004
+console.error: services.settings: 
+  main/query-stripping Signature failed  TypeError: NetworkError: Network request failed
