@@ -3,17 +3,24 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
+  // states that makes the input field values to empty strings
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
+  // callback functions added to input fields, and listens to the entered input values
+  // calls at every onChange event (at every keystroke)
   const titleChangeHandler = (event) => setEnteredTitle(event.target.value);
   const amountChangeHandler = (event) => setEnteredAmount(event.target.value);
   const dateChangeHandler = (event) => setEnteredDate(event.target.value);
 
+  // handling the browser-built in submit event
   const submintHandler = (event) => {
+    // prevents the browser to refresh the page
+    // MUSTHAVE option
     event.preventDefault();
 
+    // collects the entered data/values to an object (data which defined in hooks above)
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
@@ -21,6 +28,8 @@ const ExpenseForm = () => {
     };
 
     console.log(expenseData);
+
+    // makes the input field values to empty strings again, AFTER submitting the form
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
