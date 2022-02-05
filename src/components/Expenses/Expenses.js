@@ -5,13 +5,13 @@ import ExpensesFilter from "./NewExpense/ExpensesFilter";
 import "./Expenses.css";
 
 export default function Expenses(props) {
-  const selectedYear = (data) => {
+  const filterChangeHandler = (data) => {
     console.log(data);
   };
 
   return (
     <Card className='expenses'>
-      <ExpensesFilter filterChangeHandler={selectedYear} />
+      <ExpensesFilter onChangeFilter={filterChangeHandler} />
       <ExpenseItem
         title={props.items[0].title}
         amount={props.items[0].amount}
