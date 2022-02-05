@@ -1,4 +1,5 @@
 import React from "react";
+import ExpensesFilter from "./ExpensesFilter";
 
 import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
@@ -19,6 +20,7 @@ const NewExpense = (props) => {
 
   return (
     <div className='new-expense'>
+      <ExpensesFilter />
       <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
     </div>
   );
