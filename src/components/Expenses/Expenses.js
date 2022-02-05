@@ -5,13 +5,13 @@ import ExpensesFilter from "./NewExpense/ExpensesFilter";
 import "./Expenses.css";
 
 export default function Expenses(props) {
-  const saveYearDropdownValueHandler = (data) => {
+  const selectedYear = (data) => {
     console.log(data);
   };
 
   return (
     <Card className='expenses'>
-      <ExpensesFilter onSaveYearDropdown={saveYearDropdownValueHandler} />
+      <ExpensesFilter filterChangeHandler={selectedYear} />
       <ExpenseItem
         title={props.items[0].title}
         amount={props.items[0].amount}
