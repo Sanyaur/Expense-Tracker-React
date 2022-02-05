@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   // states that makes the input field values to empty strings
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
@@ -27,7 +27,8 @@ const ExpenseForm = () => {
       date: new Date(enteredDate),
     };
 
-    console.log(expenseData);
+    // props to pass data to parent component
+    props.onSaveExpenseData(expenseData);
 
     // makes the input field values to empty strings again, AFTER submitting the form
     setEnteredTitle("");
