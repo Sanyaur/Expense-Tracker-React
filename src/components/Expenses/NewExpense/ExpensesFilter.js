@@ -4,7 +4,8 @@ import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
   const selectYearHandler = (event) => {
-    console.log(event.target.value);
+    const value = event.target.value;
+    props.onSaveYearDropdown(value);
   };
 
   return (
