@@ -12,6 +12,7 @@ const NewExpense = (props) => {
       // temporary solution for ID
       id: Math.random().toString(),
     };
+    console.log(enteredExpenseData);
 
     // props to pass data to parent component
     props.onAddExpense(expenseData);
