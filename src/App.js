@@ -27,8 +27,8 @@ function App() {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
   // funciton to get data from child component
   const addExpenseHandler = (expense) => {
+    setExpenses([expense, ...expenses]);
     console.log(expense);
-    setExpenses((prevExpenses) => [expense, ...prevExpenses]);
   };
 
   return (
