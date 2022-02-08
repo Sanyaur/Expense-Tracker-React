@@ -5,7 +5,7 @@ import ExpensesFilter from "./NewExpense/ExpensesFilter";
 import "./Expenses.css";
 
 const Expenses = (props) => {
-  const [filteredYear, setFilteredYear] = useState("2020");
+  const [filteredYear, setFilteredYear] = useState("2021");
 
   const filterChangeHandler = (data) => {
     setFilteredYear(data);
@@ -17,13 +17,19 @@ const Expenses = (props) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {props.items.map((expense) => (
-        <ExpenseItem
-          title={expense.title}
-          amount={expense.amount}
-          date={expense.date}
-        />
-      ))}
+      {props.items
+        .filter(
+          (item) => item.date.getFullYear().toString() === filteredYear
+          // (item) => item.title.includes("w")
+        )
+        .map((expense) => (
+          <ExpenseItem
+            key={expense.id}
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date}
+          />
+        ))}
     </Card>
   );
 };
