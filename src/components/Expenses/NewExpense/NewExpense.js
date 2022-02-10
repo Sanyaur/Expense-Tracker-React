@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./NewExpense.css";
 import ExpenseForm from "./ExpenseForm";
@@ -12,17 +12,29 @@ const NewExpense = (props) => {
       // temporary solution for ID
       id: Math.random().toString(),
     };
-    console.log(enteredExpenseData);
 
     // props to pass data to parent component
     props.onAddExpense(expenseData);
   };
 
-  return (
-    <div className='new-expense'>
-      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
-    </div>
+  const [isEditing, setIsEditing] = useState(false);
+
+  const startEditingHandler = () => setIsEditing(true);
+  const stopEditingHandler = () => setIsEditing(false);
+
+  let formContent = (
+    <ExpenseForm
+      onSaveExpenseData={saveExpenseDataHandler}
+      onResetForm={stopEditingHandler}
+    />
   );
+
+  if (!isEditing) {
+    formContent = (
+      <button onClick={startEditingHandler}>Add New Expense</button>
+    );
+  }
+  return <div className='new-expense'>{formContent}</div>;
 };
 
 export default NewExpense;
