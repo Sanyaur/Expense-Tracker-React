@@ -15,6 +15,7 @@ const NewExpense = (props) => {
 
     // props to pass data to parent component
     props.onAddExpense(expenseData);
+    stopEditingHandler();
   };
 
   const [isEditing, setIsEditing] = useState(false);
