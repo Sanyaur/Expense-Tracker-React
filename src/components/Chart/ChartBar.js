@@ -1,6 +1,7 @@
 import React from "react";
+import "./ChartBar.css";
 
-const ChartBar = () => {
+const ChartBar = (props) => {
   return <div>ChartBar</div>;
 };
 
