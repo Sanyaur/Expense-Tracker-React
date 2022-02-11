@@ -2,10 +2,14 @@ import React from "react";
 import ChartBar from "./ChartBar";
 import "./Chart.css";
 
-const Chart = () => {
+const Chart = (props) => {
   return (
     <div>
-      <ChartBar />
+      {/* dynamically rendering the ChartBar:
+      - for every datapoint, we render one ChartBar */}
+      {props.dataPoints.map((dataPoint) => (
+        <ChartBar />
+      ))}
     </div>
   );
 };
