@@ -8,7 +8,12 @@ const Chart = (props) => {
       {/* dynamically rendering the ChartBar:
       - for every datapoint, we render one ChartBar */}
       {props.dataPoints.map((dataPoint) => (
-        <ChartBar />
+        <ChartBar
+          key={dataPoint.id}
+          value={dataPoint.value}
+          maxValue={null}
+          label={dataPoint.label}
+        />
       ))}
     </div>
   );
