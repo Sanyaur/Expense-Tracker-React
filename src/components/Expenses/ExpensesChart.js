@@ -16,7 +16,7 @@ const ExpensesChart = (props) => {
     { label: "Dec", value: 0 },
   ];
 
-  for (const expense in props.expense) {
+  for (const expense of props.expense) {
     // gets the month number for every object from parent Component
     const expenseMonth = expense.date.getMonth(); // starting at 0 => January => 0
     // adds the value to the proper month in the array in this Component
