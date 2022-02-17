@@ -2,6 +2,7 @@ import "./ExpenseDate.css";
 import React from "react";
 
 const ExpenseDate = (props) => {
+  // date conversion black magic
   const month = props.date.toLocaleString("hu-HU", { month: "long" });
   const day = props.date.toLocaleString("hu-HU", { day: "2-digit" });
   const year = props.date.getFullYear();

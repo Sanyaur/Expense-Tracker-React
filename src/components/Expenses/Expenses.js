@@ -9,10 +9,12 @@ const Expenses = (props) => {
   // sets the year dropdown value
   const [filteredYear, setFilteredYear] = useState("2021");
 
+  // sets new dropdown value if user changes the year
   const filterChangeHandler = (data) => {
     setFilteredYear(data);
   };
 
+  // filtering logic for rendering lists based on their date of year
   const filteredExpenses = props.items.filter(
     (item) => item.date.getFullYear().toString() === filteredYear
   );
