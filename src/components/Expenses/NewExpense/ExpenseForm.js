@@ -23,7 +23,7 @@ const ExpenseForm = (props) => {
     // collects the entered data/values to an object (data which defined in hooks above)
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 
