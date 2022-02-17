@@ -18,6 +18,7 @@ const NewExpense = (props) => {
     stopEditingHandler();
   };
 
+  // conditional rendering logic to check if whether the user editing the form or not
   const [isEditing, setIsEditing] = useState(false);
 
   const startEditingHandler = () => setIsEditing(true);
@@ -30,6 +31,7 @@ const NewExpense = (props) => {
     />
   );
 
+  // if state FALSE
   if (!isEditing) {
     formContent = (
       <button onClick={startEditingHandler}>Add New Expense</button>

@@ -6,6 +6,7 @@ import ExpensesFilter from "./NewExpense/ExpensesFilter";
 import "./Expenses.css";
 
 const Expenses = (props) => {
+  // sets the year dropdown value
   const [filteredYear, setFilteredYear] = useState("2021");
 
   const filterChangeHandler = (data) => {

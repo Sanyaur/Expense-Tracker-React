@@ -6,7 +6,9 @@ import "./Chart.css";
 import { v4 as uuidv4 } from "uuid";
 
 const Chart = (props) => {
+  // creates a new array with the values only
   const dataPointValues = props.dataPoints.map((dataPoint) => dataPoint.value);
+  // getting the biggest number
   const totalMaximum = Math.max(...dataPointValues);
 
   return (
